@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Input from "./components/input";
 import Current from "./components/Current";
 import Details from "./components/Details";
@@ -11,9 +11,7 @@ const Home = () => {
   const [location, setLocation] = useState("");
   const [error, setError] = useState("");
 
-const url = `http://api.weatherapi.com/v1/forecast.json?key=7420191a977840c69c1165308232109&q=${location}&days=7&aqi=yes&alerts=yes
-
-`;
+const url = `https://api.weatherapi.com/v1/forecast.json?key=7420191a977840c69c1165308232109&q=${location}&days=7&aqi=yes&alerts=yes`;
 
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -65,7 +63,7 @@ const url = `http://api.weatherapi.com/v1/forecast.json?key=7420191a977840c69c11
 
   return (
     <div className="bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-fit">
-      <div className="bg-white/25 w-full  flex flex-col h-fit h-fit">
+      <div className="bg-white/25 w-full  flex flex-col  h-fit">
         <div className="flex flex-col justify-between  items-center p-12 md:flex-row">
           <Input handleSearch={handleSearch} setLocation={setLocation} />
           <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
