@@ -5,16 +5,15 @@ import Current from "./components/Current";
 import Details from "./components/Details";
 import Weekly from "./components/Week";
 
+
 const Home = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
   const [location, setLocation] = useState("");
   const [error, setError] = useState("");
 
 const url = `http://api.weatherapi.com/v1/forecast.json?key=7420191a977840c69c1165308232109&q=${location}&days=7&aqi=yes&alerts=yes
 
 `;
-
-
 
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
